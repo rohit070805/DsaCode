@@ -1,6 +1,14 @@
+// Bst ke sare questions me used logiv
+    // Inorder is sorted
+    // use max and min variable for current NOde
+    // Bst ko sidha krdo ,like linked list,Jod Do
+    // Binary search lgake dekhlo ,divide and conqure
+    // Mid node pe jake dono cases k liye recursion ,(0,mid-1) and (mid,n)
+
 #include<iostream>
 #include<queue>
 using namespace std;
+// 
 class Node{
     public:
     int data;
