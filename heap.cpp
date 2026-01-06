@@ -28,6 +28,11 @@ class maxHeap{
         this->index = 2;
     }
     void Insert(int data){
+        // time complexity - O(logN)
+        if(index==500000){
+            cout<<"Heap Overflow"<<endl;
+            return;
+        }
         arr[index] = data;
         int i = index;
         while(arr[i]>arr[i/2]){
@@ -47,13 +52,12 @@ class maxHeap{
 
 int main(){
     maxHeap h1;
-    h1.Insert(100);
-    h1.Insert(50);
-    h1.Insert(60);
-    h1.Insert(40);
-    h1.Insert(30);
+    h1.Insert(10);
     h1.Insert(20);
-    h1.Insert(175);
+    h1.Insert(5);
+    h1.Insert(11);
+    h1.Insert(6);
+   
     h1.print();
     return 0;
 
