@@ -92,20 +92,20 @@ class maxHeap{
 };
 
 void headpify(int*arr,int n,int index){
-    if(index>=n) return;
-    
+  
+    // No need of base case as jb index last me jayega ab koi condition satofy nhihogi or function apne aap end
     int leftI = 2*index;
     int rightI = 2*index+1;
     int largestIndex = index;
-            if(leftI<n && arr[largestIndex]<arr[leftI]){
-                largestIndex = leftI;
-            }
-            if(rightI<n&& arr[largestIndex]<arr[rightI]){
-                largestIndex = rightI;
-            }
-            if(largestIndex==index) break;
-            swap(arr[index],arr[largestIndex]);
-        headpify(arr,n,largestIndex);
+    if(leftI<=n && arr[largestIndex]<arr[leftI]){
+        largestIndex = leftI;
+    }
+    if(rightI<=n&& arr[largestIndex]<arr[rightI]){
+        largestIndex = rightI;
+    }
+            
+    swap(arr[index],arr[largestIndex]);
+    headpify(arr,n,largestIndex);
         
 }
 int main(){
