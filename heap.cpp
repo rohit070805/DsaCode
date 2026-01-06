@@ -97,10 +97,10 @@ void headpify(int*arr,int n,int index){
     int leftI = 2*index;
     int rightI = 2*index+1;
     int largestIndex = index;
-            if(leftI<index && arr[largestIndex]<arr[leftI]){
+            if(leftI<n && arr[largestIndex]<arr[leftI]){
                 largestIndex = leftI;
             }
-            if(rightI<index && arr[largestIndex]<arr[rightI]){
+            if(rightI<n&& arr[largestIndex]<arr[rightI]){
                 largestIndex = rightI;
             }
             if(largestIndex==index) break;
