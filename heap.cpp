@@ -15,16 +15,14 @@ Actual implementation is done via array,tree is only for visualisation
 #include<climits>
 using namespace std;
 class maxHeap{
-    int* arr;
+    int arr[500000];
     int index;
     public:
     maxHeap(){
-        this->arr = new int[200];
         this->arr[0] = INT_MAX;
         this->index = 1;
     }
     maxHeap(int data){
-        this->arr = new int[200];
         this->arr[0] = INT_MAX;
         this->arr[1] = data;
         this->index = 2;
