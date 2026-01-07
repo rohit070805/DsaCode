@@ -91,38 +91,53 @@ class maxHeap{
 
 };
 
-
-void headpify(int*arr,int n,int index){
+void heapify(int*arr,int n,int index){
   
     // No need of base case as jb index last me jayega ab koi condition satofy nhihogi or function apne aap end
     int leftI = 2*index;
     int rightI = 2*index+1;
     int largestIndex = index;
-    if(leftI<=n && arr[largestIndex]<arr[leftI]){
-        largestIndex = leftI;
-    }
-    if(rightI<=n&& arr[largestIndex]<arr[rightI]){
-        largestIndex = rightI;
-    }
-            
-    swap(arr[index],arr[largestIndex]);
-    headpify(arr,n,largestIndex);
+            if(leftI<=n && arr[largestIndex]<arr[leftI]){
+                largestIndex = leftI;
+            }
+            if(rightI<=n&& arr[largestIndex]<arr[rightI]){
+                largestIndex = rightI;
+            }
+            if(largestIndex==index) return;
+            swap(arr[index],arr[largestIndex]);
+        heapify(arr,n,largestIndex);
         
 }
+void arrayToHeap(int* arr,int n){
+    /* leaf nodes ko krne ki jrurat nhi,vo already hote 1 -> n/2 tak non leaf node hoti
+     **ye NlogN nhi hai o(N) hi hai
+     Building a heap using bottom-up heapify is O(n) because most nodes are near the bottom of the tree and move only 0–1 levels.
+    Only a few nodes near the top can move many levels, so the total work adds up to linear instead of n log n.
+    */
+    for(int i = n/2;i>=1;i--){
+        heapify(arr,n,i);
+    }
+}
 int main(){
-    maxHeap h1;
-    h1.Insert(20);
-    h1.Insert(11);
-    h1.Insert(13);
-    h1.Insert(10);
-    h1.Insert(6);
-    h1.Insert(2);
-    h1.Insert(3);
+    // maxHeap h1;
+    // h1.Insert(20);
+    // h1.Insert(11);
+    // h1.Insert(13);
+    // h1.Insert(10);
+    // h1.Insert(6);
+    // h1.Insert(2);
+    // h1.Insert(3);
    
-    h1.print();
-    h1.Delete();
-    h1.print();
+    // h1.print();
+    // h1.Delete();
+    // h1.print();
+    int arr[] = {INT_MAX,5,10,15,20,25,12,11};
+   arrayToHeap(arr,7);
+    for(auto i:arr){
+        cout<<i<<" ";
+    }
     return 0;
+
      
 
 }
