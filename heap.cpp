@@ -14,6 +14,15 @@ Time Complexities
     ~ min/max element from heap - O(1)
     ~ Insertion - O(logN)
     ~ Deletion - O(logN)
+Heap STL
+    ~ priority_queue<int> pq; {by default max heap}
+    ~ pq.push(10);
+    ~ pq.top();
+    ~ pq.pop();
+    ~ pq.size();
+    ~ pq.empty();
+
+    ~ priority_queue<int,vector<int>,greater<int> > pq {min Heap}
 
 */
  
@@ -92,7 +101,7 @@ class maxHeap{
 };
 
 void heapify(int*arr,int n,int index){
-  
+    // yaha pe jo n hai vo last index hai joki possible hai acces krna not number of elements
     // No need of base case as jb index last me jayega ab koi condition satofy nhihogi or function apne aap end
     int leftI = 2*index;
     int rightI = 2*index+1;
