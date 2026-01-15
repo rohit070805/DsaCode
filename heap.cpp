@@ -24,6 +24,12 @@ Heap STL
 
     ~ priority_queue<int,vector<int>,greater<int> > pq {min Heap}
 
+Merge k sorted thing:
+    ~ sbka first element store kralo phle minheap me
+    ~ ab jb tk heap empty na ho tb tak jo top me ho use ans me push kro 
+    ~ k me se is current wali array/linkedList ka next heap me push krdo 
+    ~ heap empty hone k bad ans return
+
 */
  
 #include<iostream>
