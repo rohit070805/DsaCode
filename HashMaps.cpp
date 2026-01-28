@@ -22,12 +22,20 @@ How O(1) searching in unordered Using array implementation:
     - Hash function = Hash Code + Compression Function
         - Hash code : The formula that is being used to convert key to an integer
         - Compression Function: It bring to generated int inside the bounds of array
+    - Actual complexity is the complexity of Hash Function.
     - Now using the inbounded index to store the value in array
     - When searching is done the key provided again go through Hashing and result at generated index is returned.
+Challanges:
     - Hash Code should be as such that there are minimum collision for different keys.
-    - Collisiong Handling
+    - Collisiong Handling:
         - Open Hashing:Create a linked list for the keys where collision is occuring
         - Closed Adressing:If collision occur find out next free space and insert there.
+
+Load Factor: (n/b )
+    - n-> number of elements
+    - b-> number of free boxes
+    if(ratio <0.7) => Good Hash Function
+
 */
 #include<iostream>
 #include<unordered_map>
