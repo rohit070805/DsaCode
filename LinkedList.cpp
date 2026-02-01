@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+// linked list me jo bola hai use soch kya kya Krna hai or vo vo krdo
 class Node {
         public:
         int data;
