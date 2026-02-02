@@ -39,6 +39,15 @@ void insertinTrie(TrieNode* root,string s){
     }
     insertinTrie(child,s.substr(1));
 }
+
+ bool searchinTrie(TrieNode* root,string word) {
+        TrieNode* temp = root;
+        for(auto ch:word){
+            if(temp->children[ch-'a']==NULL) return false;
+            temp = temp->children[ch-'a'];
+        }
+        return temp->isTerminal;
+    }
 void deleteinTrie(TrieNode* root,string s){
     
     if(s.length()==0){
@@ -57,4 +66,7 @@ void deleteinTrie(TrieNode* root,string s){
 int main(){
     TrieNode* root = new TrieNode('-');
     insertinTrie(root,"Rohit");
+    insertinTrie(root,"Mandeep");
+    deleteinTrie(root,"Rohit");
+    cout<<searchinTrie(root,"Rohit");
 }
