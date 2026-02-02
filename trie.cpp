@@ -8,6 +8,7 @@ Deletion in Trie
     - Yaha agr erase krenfe chize to baki ki strings bhi affect ho jayengi
 */
 #include<iostream>
+#include<vector>
 using namespace std;
 class TrieNode{
     public:
@@ -24,7 +25,7 @@ class TrieNode{
 };
 // Time complexity = length of string to be inserted O(K) for all insert/delete/search
 void insertinTrie(TrieNode* root,string s){
-    cout<<"Inserting from "<<s<<endl;
+    
     if(s.length()==0){
         root->isTerminal = true;
         return;
@@ -63,10 +64,39 @@ void deleteinTrie(TrieNode* root,string s){
     }
     deleteinTrie(child,s.substr(1));
 }
+void  getallPossibleCombo(TrieNode* root,vector<string>& ans,string temp){
+            if(root->isTerminal) ans.push_back(temp);
+             for(int i =0;i<26;i++){
+                if(root->children[i]!=NULL){
+                    char ch = root->children[i]->data;
+                    temp = temp+ch;
+                    getallPossibleCombo(root->children[i],ans,temp);
+                    temp.pop_back();
+                }
+             }
+}
+vector<string> autoComplete(TrieNode* root,string prefix){
+    for(auto ch :prefix){
+        if(root->children[ch-'a']==NULL)return {};
+        root = root->children[ch-'a'];
+    }  
+    
+    vector<string> ans;
+    getallPossibleCombo(root,ans,prefix);
+    return ans;
+}
+
 int main(){
     TrieNode* root = new TrieNode('-');
-    insertinTrie(root,"Rohit");
-    insertinTrie(root,"Mandeep");
-    deleteinTrie(root,"Rohit");
-    cout<<searchinTrie(root,"Rohit");
+    insertinTrie(root,"rohit");
+    insertinTrie(root,"roni");
+    insertinTrie(root,"rohuu");
+    insertinTrie(root,"aman");
+    insertinTrie(root,"ramesh");
+    
+    vector<string> allCombos = autoComplete(root,"roh");
+    for(auto s:allCombos){
+        cout<<s<<endl;
+    }
+    return 0;
 }
