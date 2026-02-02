@@ -49,6 +49,7 @@ void insertinTrie(TrieNode* root,string s){
         }
         return temp->isTerminal;
     }
+
 void deleteinTrie(TrieNode* root,string s){
     
     if(s.length()==0){
@@ -64,6 +65,8 @@ void deleteinTrie(TrieNode* root,string s){
     }
     deleteinTrie(child,s.substr(1));
 }
+
+
 void  getallPossibleCombo(TrieNode* root,vector<string>& ans,string temp){
             if(root->isTerminal) ans.push_back(temp);
              for(int i =0;i<26;i++){
@@ -75,6 +78,8 @@ void  getallPossibleCombo(TrieNode* root,vector<string>& ans,string temp){
                 }
              }
 }
+
+
 vector<string> autoComplete(TrieNode* root,string prefix){
     for(auto ch :prefix){
         if(root->children[ch-'a']==NULL)return {};
@@ -85,17 +90,16 @@ vector<string> autoComplete(TrieNode* root,string prefix){
     getallPossibleCombo(root,ans,prefix);
     return ans;
 }
+
 vector<vector<string>> autoCompleteEveryCharacter(TrieNode* root,string prefix){
     vector<vector<string>> ans;
-   
     for(int i =0;i<prefix.size();i++){
         char ch = prefix[i];
-        if(root->children[ch-'a']==NULL)return {};
+        if(root->children[ch-'a']==NULL)break;
         root = root->children[ch-'a'];
-         vector<string> temp;
-      getallPossibleCombo(root,temp,prefix.substr(0,i+1));
-     ans.push_back(temp);
-        
+        vector<string> temp;
+        getallPossibleCombo(root,temp,prefix.substr(0,i+1));
+        ans.push_back(temp);    
     }  
 
     return ans;
@@ -108,9 +112,13 @@ int main(){
     insertinTrie(root,"rohuu");
     insertinTrie(root,"aman");
     insertinTrie(root,"ramesh");
-    
-    vector<vector<string>> allCombos = autoCompleteEveryCharacter(root,"roh");
-    for(auto v:allCombos){
+    vector<string> allCombos = autoComplete(root,"roh");
+    for(auto s:allCombos){
+        cout<<s<<" "; 
+    }
+    cout<<endl;
+    vector<vector<string>> allCombos2 = autoCompleteEveryCharacter(root,"roh");
+    for(auto v:allCombos2){
         for(auto s:v){
             cout<<s<<" ";
         }
