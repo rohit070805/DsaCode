@@ -85,6 +85,21 @@ vector<string> autoComplete(TrieNode* root,string prefix){
     getallPossibleCombo(root,ans,prefix);
     return ans;
 }
+vector<vector<string>> autoCompleteEveryCharacter(TrieNode* root,string prefix){
+    vector<vector<string>> ans;
+   
+    for(int i =0;i<prefix.size();i++){
+        char ch = prefix[i];
+        if(root->children[ch-'a']==NULL)return {};
+        root = root->children[ch-'a'];
+         vector<string> temp;
+      getallPossibleCombo(root,temp,prefix.substr(0,i+1));
+     ans.push_back(temp);
+        
+    }  
+
+    return ans;
+}
 
 int main(){
     TrieNode* root = new TrieNode('-');
@@ -94,9 +109,12 @@ int main(){
     insertinTrie(root,"aman");
     insertinTrie(root,"ramesh");
     
-    vector<string> allCombos = autoComplete(root,"roh");
-    for(auto s:allCombos){
-        cout<<s<<endl;
+    vector<vector<string>> allCombos = autoCompleteEveryCharacter(root,"roh");
+    for(auto v:allCombos){
+        for(auto s:v){
+            cout<<s<<" ";
+        }
+        cout<<endl;
     }
     return 0;
 }
