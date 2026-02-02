@@ -22,7 +22,7 @@ class TrieNode{
         this->isTerminal =false;
     }
 };
-// Time complexity = length of string to be inserted O(K)
+// Time complexity = length of string to be inserted O(K) for all insert/delete/search
 void insertinTrie(TrieNode* root,string s){
     cout<<"Inserting from "<<s<<endl;
     if(s.length()==0){
