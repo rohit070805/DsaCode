@@ -3,6 +3,9 @@ Every Node will have 3 things
     - Value
     - List of Children {array/map}
     - bool val isTerminal {To check if is end of the string}
+Deletion in Trie
+    - Trie me delete krna hai to bs string ke end pe jake isTerminal ko false krdo
+    - Yaha agr erase krenfe chize to baki ki strings bhi affect ho jayengi
 */
 #include<iostream>
 using namespace std;
@@ -19,6 +22,7 @@ class TrieNode{
         this->isTerminal =false;
     }
 };
+// Time complexity = length of string to be inserted O(K)
 void insertinTrie(TrieNode* root,string s){
     cout<<"Inserting from "<<s<<endl;
     if(s.length()==0){
@@ -34,6 +38,21 @@ void insertinTrie(TrieNode* root,string s){
         root->children[s[0]-'a'] = child;
     }
     insertinTrie(child,s.substr(1));
+}
+void deleteinTrie(TrieNode* root,string s){
+    
+    if(s.length()==0){
+        root->isTerminal = false;
+        return;
+    }
+    
+    TrieNode* child;
+    if(root->children[s[0]-'a']!=NULL){
+            child = root->children[s[0]-'a'];
+    }else{
+        return;
+    }
+    deleteinTrie(child,s.substr(1));
 }
 int main(){
     TrieNode* root = new TrieNode('-');
