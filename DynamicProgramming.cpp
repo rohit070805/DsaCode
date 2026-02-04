@@ -3,7 +3,7 @@ Quotes:
     - Optimisation over plain recusrion.
     - Breaking problems in sub problem.
     - Someone who forgets history,Repeats it.
-    
+
 DP can be applied where{Useless defination}
     - Overlapping subproblem {Ek  solved cheez ko dobara solve krna}
     - Optimal SubStructure { bdi problem ka soltion choti me bhi dikh rha ho i.e Recusion}
@@ -33,7 +33,27 @@ Bottom Up/Tabulisation:{base case->>>>> given number}
     - Steps
         - Create a dp Array.
         - Fill dp array for known base cases
-        - Fill remaining dp Array using logic of recursive relation.
+        - Fill remaining dp Array using logic of recursive relation.{for loop ki condition dhyan se dekho}
             - For loop k andr fill krte time recursive calls ko copy paste krne ke bad unhe dp[] ke according convert krna hai
+        - return vo krna hai ,jo agr hm top down use krte to usme bhejta (i.e : n in fibonnaci)
+*/
 
+/*
+Space Optimisation:{Only in bottom UP}
+    - Tabulisation me dp fill krne wale loop me jao
+    - Yha dp[i] ko pkdo or check kro kya koi pattern dikh rha hai{Kya dp[i] kisi or pe depend kr rha hai}
+    - Agar pattern me current elemnt 2 ya 3 phle ke elements pe hi depend krta hai to
+    - Istead of using full array for dp use only those two variable.{like prev1 and prev2 in fibonnaci}
+*/
+
+/*
+Dimension of DP array
+    - Go to the Normal recursion code
+    - Here see how many parameters of function are changing during recursion call
+*/
+
+
+/*
+Important Tips:
+    - Ho skta Top Down and Bottom Up approach ki DP array alag alag ho hmesha soch smjh k krna copy paste nhi
 */
