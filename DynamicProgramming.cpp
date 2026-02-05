@@ -57,3 +57,11 @@ Dimension of DP array
 Important Tips:
     - Ho skta Top Down and Bottom Up approach ki DP array alag alag ho hmesha soch smjh k krna copy paste nhi
 */
+
+
+
+/*
+Patterns of Dp:
+    - Exclude Include patter {House Robber}
+    - All Possible ways {Coin change} 
+*/
