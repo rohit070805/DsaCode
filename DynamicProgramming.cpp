@@ -57,6 +57,7 @@ Dimension of DP array
 Important Tips:
     - Ho skta Top Down and Bottom Up approach ki DP array alag alag ho hmesha soch smjh k krna copy paste nhi
     - (5****)Hmahesha recursion ache se likho,base case ek hi rkho vrna tabulation me dikat aayegi baki ki case me check krke hi recusrion call lgao taki invalid call jaye hi na
+    - 2D dp me space optimisation ke liye check kro ki 1d array se bhi kr skte hai kya,kya job answer hai ko kisi constant row ya column ki array pe depend kr rha hai.
 
 */
 
