@@ -60,6 +60,7 @@ Important Tips:
     - 2D dp me space optimisation ke liye check kro ki 1d array se bhi kr skte hai kya,kya job answer hai ko kisi constant row ya column ki array pe depend kr rha hai.
         - Abhi ye 2 arrays jo hongi unhe hm ek me bhi convert kr skte hai bs ye dekho jo element hai jo apne bad wale pe depend kr rha ya phle wale pe, 
         - agr bad wale pe to 0 ->>n jao or phle wale pe to n ->> 0 jao using single array.
+    - TopDown me agar TLE mar rha ho to jo variables change nhi ho rahe unhe By refrence pas krdo.
 
 */
 
