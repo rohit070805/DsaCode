@@ -56,12 +56,14 @@ Dimension of DP array
 /*
 Important Tips:
     - Ho skta Top Down and Bottom Up approach ki DP array alag alag ho hmesha soch smjh k krna copy paste nhi
-    - (5****)Hmahesha recursion ache se likho,base case ek hi rkho vrna tabulation me dikat aayegi baki ki case me check krke hi recusrion call lgao taki invalid call jaye hi na
+    - (5*****)Hmahesha recursion ache se likho,base case ek hi rkho vrna tabulation me dikat aayegi baki ki case me check krke hi recusrion call lgao taki invalid call jaye hi na
     - 2D dp me space optimisation ke liye check kro ki 1d array se bhi kr skte hai kya,kya job answer hai ko kisi constant row ya column ki array pe depend kr rha hai.
         - Abhi ye 2 arrays jo hongi unhe hm ek me bhi convert kr skte hai bs ye dekho jo element hai jo apne bad wale pe depend kr rha ya phle wale pe, 
         - agr bad wale pe to 0 ->>n jao or phle wale pe to n ->> 0 jao using single array.
     - TopDown me agar TLE mar rha ho to jo variables change nhi ho rahe unhe By refrence pas krdo.
     - Space Optimised me jo curr se equate jo varibale kr rhe ho unme se dono ko return krake dekho ,high chances current na chale.
+    - (5*****)Bottom Up tip
+        - Jitne bhi base cases likhe hai recursion me ,loops me ghusne se phel unhe table me fill karo.
 
 */
 
