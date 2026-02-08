@@ -61,6 +61,7 @@ Important Tips:
         - Abhi ye 2 arrays jo hongi unhe hm ek me bhi convert kr skte hai bs ye dekho jo element hai jo apne bad wale pe depend kr rha ya phle wale pe, 
         - agr bad wale pe to 0 ->>n jao or phle wale pe to n ->> 0 jao using single array.
     - TopDown me agar TLE mar rha ho to jo variables change nhi ho rahe unhe By refrence pas krdo.
+    - Space Optimised me jo curr se equate jo varibale kr rhe ho unme se dono ko return krake dekho ,high chances current na chale.
 
 */
 
