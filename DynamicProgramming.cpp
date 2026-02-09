@@ -82,22 +82,34 @@ Patterns of Dp:
     - Bade ke andr chota fir or chota fir chota aissi sequence ho to ye wala lgta hai
     - Longest Increasing Subsequence
 Method:
-
-int solveUsingBS(vector<int>& nums){
+  int solveUsingBS(vector<int>& nums){
         vector<int> ans;
         ans.push_back(nums[0]);
         
-            - Isme basically ye hai ho rha hum traverse krte ja rhe
-            - Agar last wale se bda element aa rha to use sidha push krdo qki condition valid hai
-            - Agar chota aarha to,check kro is chote ke equal ya is se just bda konse index pe hai
-            - Us jagah use daldo
-            - Agar last index pe hi hua to manlo us last wale ko count nhi kiya or ise kr liya
-            - QKi chote wala or options bhi dega aage jake count bdhayega hi
-            - or kahi bich me aarha hai to manlo ise uski jagah rkdo 
-            - manlo aage aise elements aagye ki is se to bde hai or iske aage jitne hai unse chote 
-            - to hm ye consider kr lenge ki yaha se shuru kiya tha count krna{jaha bich me dala hai ye}
+        //     - Isme basically ye hai ho rha hum traverse krte ja rhe
+        //     - Agar last wale se bda element aa rha to use sidha push krdo qki condition valid hai
+        //     - Agar chota aarha to,check kro is chote ke equal ya is se just bda konse index pe hai
+        //     - Us jagah use daldo
+        //     - Agar last index pe hi hua to manlo us last wale ko count nhi kiya or ise kr liya
+        //     - QKi chote wala or options bhi dega aage jake count bdhayega hi
+        //     - or kahi bich me aarha hai to manlo ise uski jagah rkdo 
+        //     - manlo aage aise elements aagye ki is se to bde hai or iske aage jitne hai unse chote 
+        //     - to hm ye consider kr lenge ki yaha se shuru kiya tha count krna{jaha bich me dala hai ye}
         
-  
+        
+        // Example:
+        // ans = [5,7,25] ye sare isi sequence me aaye the
+        // - element =6
+        // ans = [5,6,25] 
+        // - case 1
+        //     - Abhi agar sare elements 25 se bde aaye the unhe daldeneg or final ans me count dekhnge 
+        //     - Par actual subsequence hogi{ 5,7,25,.. .. ..}
+        // - case 2
+        //     - ek elemnee aagya 6 ko 25 ke bich
+        //     ans = [5,6,17]
+        //     - ab 25 or 7 ko bhul jao or actual subsequnce ho jayegi {5,6,17} amd so on for further elements
+
+        
         for(int i =0;i<nums.size();i++){
             if(nums[i]>ans.back()) ans.push_back(nums[i]);
             else{
