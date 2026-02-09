@@ -64,6 +64,8 @@ Important Tips:
     - Space Optimised me jo curr se equate jo varibale kr rhe ho unme se dono ko return krake dekho ,high chances current na chale.
     - (5*****)Bottom Up tip
         - Jitne bhi base cases likhe hai recursion me ,loops me ghusne se phel unhe table me fill karo.
+    -   5**********
+            - Agar curr wala khud pe bhi depend kr rha hai tabulation me to use bhi phle fill krna pdegaa.
 
 */
 
