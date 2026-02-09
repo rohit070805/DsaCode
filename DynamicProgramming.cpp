@@ -66,7 +66,8 @@ Important Tips:
         - Jitne bhi base cases likhe hai recursion me ,loops me ghusne se phel unhe table me fill karo.
     -   5**********
             - Agar curr wala khud pe bhi depend kr rha hai tabulation me to use bhi phle fill krna pdegaa.
-
+    - Index Shifting:dp me agar tum kisi vjh se -1 bhi include krna pd rha to dono bottomup and topdow me index shift krdo d[-1] = d[0];
+        - BottomUp me to hr jgh kro shifting same copy paste krke jha bhi use ho rha hp
 */
 
 
@@ -75,4 +76,10 @@ Important Tips:
 Patterns of Dp:
     - Exclude Include patter {House Robber}
     - All Possible ways {Coin change} 
+*/
+/*
+(5***)DP with Binary Search:
+    - Bade ke andr chota fir or chota fir chota aissi sequence ho to ye wala lgta hai
+    - Longest Increasing Subsequence
+    -
 */
