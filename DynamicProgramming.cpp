@@ -77,10 +77,17 @@ Patterns of Dp:
     - Exclude Include patter {House Robber}
     - All Possible ways {Coin change} 
 */
+
+
+
 /*
 (5***)DP with Binary Search:
-    - Bade ke andr chota fir or chota fir chota aissi sequence ho to ye wala lgta hai
+How to catch:
+    * Aisa case jha ye likha ho sequence tbhi bnegi jb ek ke upr ek chota ya bda aayega 
+    * or return count krana ho ki kitne aa skte
+Questions:
     - Longest Increasing Subsequence
+    - Russian Dolls
 Method:
   int solveUsingBS(vector<int>& nums){
         vector<int> ans;
