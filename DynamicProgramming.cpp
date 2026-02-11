@@ -72,11 +72,7 @@ Important Tips:
 
 
 
-/*
-Patterns of Dp:
-    - Exclude Include patter {House Robber}
-    - All Possible ways {Coin change} 
-*/
+
 
 
 
@@ -138,4 +134,20 @@ Method:
         }
         return ans.size();
     }
+*/
+
+/*
+Merge Intervals Pattern:
+    - Isme puri ek range de rkhi hogi 
+    - or hr element pe jake curr ka answer then iske left and iske right ka answer compute krna hoga
+    - Iske liye use for loop to create a break at every possible point,
+    - find out curr left and right answer
+    - Compare and store answer according to the given case max or min where
+*/
+/*
+Patterns of Dp:
+    - Exclude Include patter {House Robber}
+    - All Possible ways {Coin change} 
+    - Longest Increasing SubSequence(Binary Seacrh withDP)
+    - Merge Interval Pattern
 */
