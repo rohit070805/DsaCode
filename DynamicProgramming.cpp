@@ -143,6 +143,7 @@ Merge Intervals Pattern:
     - Iske liye use for loop to create a break at every possible point,
     - find out curr left and right answer
     - Compare and store answer according to the given case max or min where
+    - Inme Space Optimisation possible nhi hoti.
 */
 /*
 Patterns of Dp:
