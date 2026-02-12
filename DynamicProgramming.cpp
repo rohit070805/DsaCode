@@ -148,7 +148,7 @@ Merge Intervals Pattern:
 /*
 Patterns of Dp:
     - Exclude Include patter {House Robber}
-    - All Possible ways {Coin change} 
+    - All Possible ways {Coin change} {Hint:return all possible ways in question}
     - Longest Increasing SubSequence(Binary Seacrh withDP)
     - Merge Interval Pattern
 */
