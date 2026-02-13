@@ -58,11 +58,36 @@ class Graph{
         }
     }
 };
+
+class WGraph{
+    public:
+    unordered_map<int,list<pair<int,int>>> adjList;
+    void addEdge(int u,int v,int w,bool directed){
+        if(directed){
+            adjList[u].push_back(make_pair(v,w));
+        }else{
+            adjList[u].push_back(make_pair(v,w));
+            adjList[v].push_back(make_pair(u,w));
+        }
+        cout<<"Printting list"<<endl;
+        printAdjList();
+        cout<<endl;
+    }
+       void printAdjList(){
+        for(auto i:adjList){
+            cout<<i.first <<" ->{";
+            for(auto j:i.second){
+                cout<<j.first<<"Weight:"<<j.second<<",";
+            }
+            cout<<"}"<<endl;
+        }
+    }
+};
 int main(){
-    Graph g;
-    g.addEdge(0,1,1);
-     g.addEdge(1,2,1);
-      g.addEdge(1,3,1);
-       g.addEdge(3,1,1);
+    WGraph g;
+    g.addEdge(0,1,5,0);
+     g.addEdge(1,2,4,0);
+      g.addEdge(1,3,6,0);
+      
        return 0;
 }
