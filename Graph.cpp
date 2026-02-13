@@ -59,10 +59,12 @@ class Graph{
     }
 };
 
+template <typename T>
+// using this template thing we can generalised the data type used to create a node
 class WGraph{
     public:
-    unordered_map<int,list<pair<int,int>>> adjList;
-    void addEdge(int u,int v,int w,bool directed){
+    unordered_map<int,list<pair<T,iny>>> adjList;
+    void addEdge(T u,T v,int w,bool directed){
         if(directed){
             adjList[u].push_back(make_pair(v,w));
         }else{
@@ -75,16 +77,16 @@ class WGraph{
     }
        void printAdjList(){
         for(auto i:adjList){
-            cout<<i.first <<" ->{";
+            cout<<i.first <<" ->{ ";
             for(auto j:i.second){
-                cout<<j.first<<"Weight:"<<j.second<<",";
+                cout<<"{"<<j.first<<",Weight:"<<j.second<<"},";
             }
-            cout<<"}"<<endl;
+            cout<<" }"<<endl;
         }
     }
 };
 int main(){
-    WGraph g;
+    WGraph<int> g;
     g.addEdge(0,1,5,0);
      g.addEdge(1,2,4,0);
       g.addEdge(1,3,6,0);
