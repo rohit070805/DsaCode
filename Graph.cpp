@@ -20,6 +20,7 @@ Undirected:
 Cyclic Graph:
     - cyclic present
 Acyclic Graph:
+
     - No cycle present
 */
 
