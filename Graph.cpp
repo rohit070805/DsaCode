@@ -47,6 +47,9 @@ class Graph{
         }
 
         // Printing
+        
+    }
+    void printadjList(){
         for(auto p:adjList){
             cout<<endl<<"neighbours of "<<p.first<<" are: ";
             for(auto i:p.second){
@@ -56,12 +59,37 @@ class Graph{
         }
     }
 };
+class WGraph{
+    unordered_map<int,vector<pair<int,int>>> adjList;
+    public:
+    void addEdge(int u,int v,int w,bool directed){
+        if(directed){
+            adjList[u].push_back(make_pair(v,w));
+        }
+        else{
+            adjList[u].push_back(make_pair(v,w));
+            adjList[v].push_back(make_pair(u,w));
+        }
 
+        // Printing
+        
+    }
+    void printadjList(){
+        for(auto p:adjList){
+            cout<<endl<<"neighbours of "<<p.first<<" are: "<<endl;
+            for(auto i:p.second){
+                cout<<i.first<<" ->Weight: "<<i.second<<endl;
+            }
+            cout<<endl;
+        }
+    }
+};
 int main(){
-    Graph g1;
-    g1.addEdge(1,2,1);
-     g1.addEdge(1,3,1);
-      g1.addEdge(1,4,1);
-       g1.addEdge(1,5,1);
+    WGraph g1;
+    g1.addEdge(1,2,5,1);
+     g1.addEdge(1,3,4,1);
+      g1.addEdge(1,4,3,1);
+       g1.addEdge(1,5,2,1);
+       g1.printadjList();
        return 0;
 }
