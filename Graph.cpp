@@ -61,6 +61,8 @@ class Graph{
             cout<<endl;
         }
     }
+
+
 };
 template<typename T>
 class WGraph{
@@ -88,6 +90,7 @@ class WGraph{
         }
     }
 };
+
 int main(){
     WGraph<int> g1;
     g1.addEdge(1,2,5,1);
