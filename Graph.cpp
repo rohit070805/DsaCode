@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
+
+
 /*
 Graph:
     - Combination of edges and nodes
@@ -33,11 +35,12 @@ Implementation:
     - Adjancy List
         - har ek node ke liye ek list bnao {here in this node store the neighbours for this node}
 */
-
+template<typename T>
+// Ye templaet sirf next class k liye kam krega,Wgraph k liye nya likhna pdega
 class Graph{
-    unordered_map<int,vector<int>> adjList;
+    unordered_map<T,vector<T>> adjList;
     public:
-    void addEdge(int u,int v,bool directed){
+    void addEdge(T u,T v,bool directed){
         if(directed){
             adjList[u].push_back(v);
         }
@@ -59,10 +62,11 @@ class Graph{
         }
     }
 };
+template<typename T>
 class WGraph{
-    unordered_map<int,vector<pair<int,int>>> adjList;
+    unordered_map<T,vector<pair<T,int>>> adjList;
     public:
-    void addEdge(int u,int v,int w,bool directed){
+    void addEdge(T u,T v,int w,bool directed){
         if(directed){
             adjList[u].push_back(make_pair(v,w));
         }
@@ -85,7 +89,7 @@ class WGraph{
     }
 };
 int main(){
-    WGraph g1;
+    WGraph<int> g1;
     g1.addEdge(1,2,5,1);
      g1.addEdge(1,3,4,1);
       g1.addEdge(1,4,3,1);
